@@ -1,6 +1,11 @@
 # PAA development constraints
 
-Read README.md and docs/ubuntu.md before extending connectors. Target is Ubuntu 24.04 desktop.
+Read docs/spec.md first: it is the authoritative v0.2 requirements baseline.
+On this Mac, maintain requirements/design documents only; implement and test the formal system
+directly on the target Ubuntu 24.04 desktop. Existing code and docs/ubuntu.md are legacy prototype
+references, not mandatory implementation choices. Hermes owns the Telegram gateway/coordinator;
+Pi performs collection and processing through controlled tools. Do not substitute a custom chatbot
+or direct model calls for these integrations.
 The owner chose normal browser sessions for Canvas and school Outlook; do not replace them with
 Graph/Canvas token authorization without an explicit change of direction.
 
