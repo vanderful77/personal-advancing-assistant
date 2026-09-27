@@ -30,7 +30,8 @@
 
 ## 开始使用
 
-详见 [Ubuntu部署与配置](docs/ubuntu.md)。快速查看本地CLI（无需安装依赖）：
+技术选择、完整需求和分阶段计划见 [技术路线文档](docs/technical-roadmap.md)。
+部署操作详见 [Ubuntu部署与配置](docs/ubuntu.md)。快速查看本地CLI（无需安装依赖）：
 
 ```sh
 python3 -m paa.cli --help
