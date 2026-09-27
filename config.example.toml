@@ -1,0 +1,69 @@
+timezone = "Europe/Amsterdam"
+data_dir = ".runtime"
+personal_dir = ".runtime/personal"
+skills_dir = "skills"
+poll_seconds = 900
+briefing_time = "20:00"
+
+[browser]
+headless = false
+# Optional installed browser: "chrome" or "msedge". Empty uses Playwright Chromium.
+channel = ""
+
+[canvas]
+enabled = true
+url = "https://canvas.tue.nl"
+# Uses authenticated browser cookies, never a personal API token.
+# Session API access may also be restricted by the school; failures are reported.
+max_file_mb = 20
+
+[outlook]
+enabled = true
+url = "https://outlook.office.com/mail/"
+# Outlook UI differs by tenant and language. Set these after inspecting YOUR UI.
+# Until configured, source status is explicitly "unconfigured", not "synced".
+ready_selector = ""
+rows_selector = ""
+row_id_attribute = "data-itemid"
+reading_pane_selector = ""
+# Must equal the selected row stable ID; prevents old reading-pane content being misattributed.
+reading_id_attribute = ""
+max_messages = 50
+
+[telegram]
+enabled = false
+token_env = "PAA_TELEGRAM_TOKEN"
+user_id = 0
+chat_id = 0
+
+[calendar]
+enabled = false
+# Existing dedicated calendar ID, never the primary calendar.
+calendar_id = ""
+# OAuth Desktop App client JSON, created in Google Cloud and stored locally.
+client_file = ".runtime/google-client.json"
+
+[model]
+enabled = false
+# OpenAI-compatible chat-completions endpoint; no tool execution is exposed.
+endpoint = ""
+api_key_env = "PAA_MODEL_KEY"
+name = ""
+monthly_budget_eur = 20.0
+# Set conservative EUR prices including currency conversion/taxes for your provider.
+input_eur_per_million = 0.0
+output_eur_per_million = 0.0
+max_output_tokens = 1800
+
+[outlook_send]
+enabled = false
+# All selectors require calibration on the dedicated browser. New-message composition
+# is supported; native Reply threading and attachments are not implemented in v0.1.
+compose_selector = ""
+to_selector = ""
+resolved_to_selector = ""
+recipient_attribute = "data-email"
+subject_selector = ""
+body_selector = ""
+send_selector = ""
+sent_selector = ""

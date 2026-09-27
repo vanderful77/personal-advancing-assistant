@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paa-assistant"
+version = "0.1.0"
+description = "Persistent personal course assistant for Ubuntu"
+requires-python = ">=3.11"
+dependencies = ["playwright>=1.48,<2", "pypdf>=5,<7"]
+
+[project.scripts]
+paa = "paa.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["paa*"]

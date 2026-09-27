@@ -1,0 +1,18 @@
+[Unit]
+Description=PAA personal course assistant
+After=graphical-session.target network-online.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/PAA
+ExecStart=%h/PAA/.venv/bin/python -m paa.cli --config %h/PAA/config.toml run
+EnvironmentFile=-%h/.config/paa/secrets.env
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=30
+UMask=0077
+
+[Install]
+WantedBy=graphical-session.target
